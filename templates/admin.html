@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block body %}
+<form action="/admin/" method = 'post'>
+  <select name="option" class="form-control form-control-lg">
+    <option value="abook">ADD BOOK</option>
+    <option value="rbook">REMOVE BOOK</option>
+    <option value="astud">ADD STUDENT</option>
+    <option value="rstud">REMOVE STUDENT</option>
+    <option value="afacu">ADD FACULTY</option>
+    <option value="rfacu">REMOVE FACUTLY</option>
+    <option value="alibr">ADD LIBRARIAN</option>
+    <option value="rlibr">REMOVE LIBRARIAN</option>
+  </select>
+  <input type="submit">
+</form>
+{% endblock %}

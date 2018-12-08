@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block body %}
+<form action="/admin/a/{{action}}" method="post">
+    enter id
+    <input type="text" name="id">
+    enter name
+    <input type="text" name="name">
+    enter {{price_email}}
+    <input type="text" name="{{price_email}}">
+    enter {{pubid_pass}}
+    <input type="text" name="{{pubid_pass}}">
+    <input type="submit"cnx.commit()
+    cur.close()>
+</form>
+{% endblock %}

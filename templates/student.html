@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block body %}
+<div class="container">
+  {{ user }}
+  <form action="/booksearch/" method="POST" class="ml-2" style="float: right">
+    <input type="text" name="bookName" class="form-control-sm" placeholder="Enter book name"> 
+    <input type="submit" value="SEARCH BOOK" class="btn btn-primary btn-sm">
+  </form> 
+  <br>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">BOOK NAME</th>
+        <th scope="col">ISSUED DATE</th>
+        <th scope="col">EXPIRY DATE</th>
+        <th scope="col">FINE </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in books %}
+      <tr>
+        <th scope="row"></th>
+        <td>{{ i[0] }}</td>
+        <td>{{ i[1] }}</td>
+        <td>{{ i[2] }}</td>
+        <td>{{ i[3] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div>
+    TOTAL FINE = {{ totalfine }}
+  </div>
+</div>
+{% endblock %}

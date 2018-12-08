@@ -1,0 +1,59 @@
+// a trigger to automatically add expiry date depending upon member
+create trigger expire before insert on Borrower
+     for each row 
+     begin
+     declare cat varchar(20);
+     declare login varchar(10);
+     set login = new.login_id;
+     set cat = (select category from Member where Member.login_id = login);
+     set new.fine = 0;      // set fine to zero
+     if cat like 'faculty'
+     then
+     set new.expire_date = DATE_ADD(new.issue_date, INTERVAL 45 DAY);   // set dates
+     end if;
+     if cat like 'student'
+     then 
+     set new.expire_date = DATE_ADD(new.issue_date, INTERVAL 15 DAY);
+     end if;
+     end
+
+// trigger to add total fine to books
+Member 
+admin = 1001 - 1009
+librarian = 1010-1049
+student = 1050 - 4000
+faculty = 4001 - 
+
+
+////
+create procedure fine(in today_date date)
+begin 
+update Borrower set fine = DATEDIFF(today_date,expire_date) * 2;
+update Borrower set fine = 0 where fine<0;
+end;
+
+////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

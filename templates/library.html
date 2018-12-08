@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block body %}
+<center class="mb-2">
+<div class="container">
+<h3>book search</h3>	
+<form action="/booksearch/" method="POST" target="_blank">
+  Book-Name<input type="text"  class="form-control-sm"name="bookName">
+  <input type="submit" class="btn btn-primary btn-sm"><br>
+</form> 
+<hr>
+<h3>book issue</h3>
+<form action="/bookissue/" method="POST">
+  Book-ID
+  <input type="text"  class="form-control-sm"name="bookId">
+  Issuer-ID
+  <input type="text"  class="form-control-sm"name="loginId">
+  <input type="submit" class="btn btn-primary btn-sm"><br>
+</form> 
+<hr>
+<h3>book return</h3>
+<form action="/bookreturn/" method="POST">
+  Book-ID
+  <input type="text"  class="form-control-sm"name="bookId">
+  Issuer-ID
+  <input type="text"  class="form-control-sm"name="loginId">
+  <input type="submit" class="btn btn-primary btn-sm"><br>
+</form> 
+<hr>
+<h3>fine collection</h3>
+<form action="/userfine/" method="POST">
+  User-ID
+  <input type="text"  class="form-control-sm"name="loginId">
+  <input type="submit" class="btn btn-primary btn-sm"><br>
+</form> 
+<hr>
+<h3>lost book</h3>
+<form action="/booklost/" method="POST">
+  Book-ID
+  <input type="text"  class="form-control-sm"name="bookId">
+  <input type="submit" class="btn btn-primary btn-sm"><br>
+</form> 
+</div>
+</center>
+{% endblock %}

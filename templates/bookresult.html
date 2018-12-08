@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block body %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">BOOK ID</th>
+      <th scope="col">BOOK NAME</th>
+      <th scope="col">AVAILABLE</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{% for i in books %}
+    <tr>
+      <th scope="row"></th>
+      <td>{{ i[0] }}</td>
+      <td>{{ i[1] }}</td>
+      <td>{{ i[2] }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
